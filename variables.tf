@@ -1,7 +1,7 @@
 variable "project_id" {
   type           = string
   description  = "Project ID"
-  default        = "NCC_Shared"
+  default        = "seventh-circle-428201-b2"
 }
 
 variable "region" {
