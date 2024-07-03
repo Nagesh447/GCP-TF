@@ -1,46 +1,27 @@
-variable "project_name" {
-  description = "The name of the project"
-  type        = string
-}
+# variables.tf
 
-variable "project_id_prefix" {
-  description = "The prefix for the project ID"
-  type        = string
-}
-
-variable "org_id" {
-  description = "The organization ID"
-  type        = string
-}
-
-variable "billing_account" {
-  description = "The billing account ID"
+variable "project_id" {
+  description = "The ID of the project in which to create the resources."
   type        = string
 }
 
 variable "region" {
-  description = "The region to deploy resources"
+  description = "The region in which to create the resources."
   type        = string
   default     = "us-central1"
 }
 
+variable "vpc_name" {
+  description = "The name of the VPC network."
+  type        = string
+  default     = "my-vpc-network"
+}
+
 variable "subnets" {
-  description = "Subnets to create in the VPC"
-  type = list(object({
-    name   = string
-    cidr   = string
-    region = string
-  }))
-  default = [
-    {
-      name   = "subnet-1"
-      cidr   = "10.0.1.0/24"
-      region = "us-central1"
-    },
-    {
-      name   = "subnet-2"
-      cidr   = "10.0.2.0/24"
-      region = "us-east1"
-    }
-  ]
+  description = "A map of subnet names to their respective CIDR ranges."
+  type        = map(string)
+  default     = {
+    subnet1 = "10.0.1.0/24"
+    subnet2 = "10.0.2.0/24"
+  }
 }
