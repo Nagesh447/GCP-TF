@@ -2,7 +2,7 @@
 
 variable "project_id" {
   description = "The ID of the project in which to create the resources."
-  type        = string
+  type        = seventh-circle-428201-b2
 }
 
 variable "region" {
@@ -14,7 +14,7 @@ variable "region" {
 variable "vpc_name" {
   description = "The name of the VPC network."
   type        = string
-  default     = "my-vpc-network"
+  default     = "fg-intercon-us"
 }
 
 variable "subnets" {
