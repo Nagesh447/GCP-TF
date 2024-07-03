@@ -2,7 +2,7 @@
 
 variable "project_id" {
   description = "The ID of the project in which to create the resources."
-  type        = seventh-circle-428201-b2
+  type        = string
 }
 
 variable "region" {
